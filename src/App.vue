@@ -1,30 +1,46 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="app">
+    <CardList />
+  </div>
 </template>
 
+<script>
+import CardList from '@/components/CardList.vue';
+// import PaginationPage from "@/components/PaginationPage.vue";
+
+export default {
+  components: {
+    CardList,
+    // PaginationPage,
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import "~normalize.css";
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap")
+      format("woff2"),
+    url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap")
+      format("woff");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400, 700;
 }
 
-nav {
-  padding: 30px;
+* {
+  box-sizing: border-box;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  font-size: 12px;
+  line-height: 14px;
+  color: #8d8d8d;
 }
 </style>
